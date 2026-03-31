@@ -21,3 +21,6 @@ env/
 
 .env
 .env.local
+
+plan.md
+CLAUDE.md
