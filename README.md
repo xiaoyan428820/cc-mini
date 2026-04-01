@@ -2,7 +2,7 @@
 
 A lightweight Python reimplementation of [Claude Code](https://claude.ai/code) — a terminal-based AI coding assistant powered by the Anthropic API. Runs an agentic tool loop, supports session persistence, and is built for extensibility.
 
-The entire implementation is **~5000 lines of Python**.
+The core implementation is **~1000 lines of Python**.
 
 ---
 
