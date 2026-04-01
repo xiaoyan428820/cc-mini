@@ -471,11 +471,37 @@ cc-mini includes **Buddy**, a Tamagotchi-style AI companion that lives in your t
 ### How it works
 
 - **18 species**: duck, goose, blob, cat, dragon, octopus, owl, penguin, turtle, snail, ghost, axolotl, capybara, cactus, robot, rabbit, mushroom, chonk
+- **Bonus species**: pikachu (braille dot-matrix art) — only available via seed, see below
 - **5 rarities**: Common (60%), Uncommon (25%), Rare (10%), Epic (4%), Legendary (1%) — plus 1% shiny chance
 - **5 stats** (0–100): Debugging, Patience, Chaos, Wisdom, Snark — these shape how your companion talks
 - **ASCII sprite** with idle animation (blinking, fidgeting) in the terminal toolbar
 - **Automatic reactions**: after each Claude response, your companion comments in a speech bubble
 - **Direct conversation**: address your companion by name and it replies (with conversation memory)
+
+### Use a specific buddy (Pikachu)
+
+You can override the default buddy seed with `CC_MINI_BUDDY_SEED`. Set it to a seed containing "pikachu" to unlock the hidden Pikachu companion (braille dot-matrix art):
+
+```bash
+export CC_MINI_BUDDY_SEED=pikachu-3361
+cc-mini
+> /buddy
+```
+
+| Rarity | Seed |
+|--------|------|
+| Common ★ | `pikachu-21` |
+| Uncommon ★★ | `pikachu-116` |
+| Rare ★★★ | `pikachu-430` |
+| Epic ★★★★ | `pikachu-488` |
+| Legendary ★★★★★ | `pikachu-3361` |
+
+To go back to the default buddy:
+
+```bash
+unset CC_MINI_BUDDY_SEED
+cc-mini
+```
 
 ### Example
 
