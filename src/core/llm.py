@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from typing import Any, Iterator
 
 import anthropic
+import httpx
 
 
 _OPENAI_IMPORT_ERROR: Exception | None = None
@@ -157,6 +158,8 @@ class LLMClient:
         return isinstance(exc, anthropic.AuthenticationError)
 
     def is_retryable_error(self, exc: Exception) -> bool:
+        if isinstance(exc, (httpx.RemoteProtocolError, httpx.ReadError, httpx.ConnectError)):
+            return True
         if self.provider == _OPENAI_PROVIDER:
             return openai is not None and isinstance(
                 exc,
